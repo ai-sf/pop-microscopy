@@ -17,21 +17,22 @@ body {
 .hero img{
     margin: 0;
     padding: 0;
-    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
+
+/* Navigation Classes */
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 24px;
-    background-color: #080808;
-    padding: 40px 192px;
-    position: fixed;
+    background-color: #000;
+    padding: 36px 192px;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
 }
 
 .navbar ul {
@@ -61,14 +62,74 @@ body {
 }
 
 .central-button img {
-    width: 80px;
-    height: 80px;
+    width: 64px;
+    height: 64px;
 }
 
 .right a {
     color: white;
     text-decoration: none;
 }
+
+/* Hamburger icon */
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+  
+/* Fullscreen vertical menu */
+.fullscreen-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffeb3b;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    padding: 20px;
+}
+  
+.fullscreen-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.fullscreen-menu ul li {
+    margin: 20px 0;
+}
+  
+.fullscreen-menu a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+}
+  
+.fullscreen-menu .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: auto; /* Stick to the bottom */
+}
+  
+.fullscreen-menu .contacts a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: black;
+}
+  
+.fullscreen-menu .contacts img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Page Classes */
 
 .h1 {
     color: #000;
@@ -77,15 +138,21 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: 60px;
-    padding: 64px 192px;
-    scroll-margin-top: 104px;
+    padding: 0px 0px;
+    scroll-margin-top: 36px;
 }
 
 .h-center {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;    /* Center vertically */
-    height: 128px;          /* Set a fixed height for centering */
+    justify-content: center;
+    align-items: center;
+    height: 128px;
+    padding: 32px 192px;
+}
+
+.h-center img {
+    width: auto;
+    height: 100%;
 }
 
 .h1-normal {
@@ -98,90 +165,52 @@ body {
     font-size: 32px;
     font-style: normal;
     font-weight: 400;
-    line-height: 35px; /* 109.375% */
-    padding: 16px 192px
-}
-
-.p-heavy {
-    padding: 64px 0px;
-    font-weight: 500;
-}
-
-.container {
-    display: flex;
-    padding: 16px 192px;
-}
-
-.image-column {
-    padding: 0px;
-    flex: 0 0 300px;
-}
-
-.text-column {
-    flex: 1;
-    padding: 0px;
-}
-
-.container-dark {
-    background-color: #080808;
-    color: #fff;
-}
-
-.container-dark .image-column {
-    padding: 32px 0px;
-    flex: 0 0 300px;
-}
-
-.container-dark .text-column {
-    padding-left: 64px;
-    padding-top: 32px;
-    padding-bottom: 32px;
-    background-color: transparent;
+    line-height: 31px;
+    padding: 0px 0px
 }
 
 .p-small {
     font-size: 24px;
     flex: 1;
-    padding: 16px 48px;
+    padding: 0px 0px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    padding: 32px 192px;
+}
+
+.image-column {
+    padding: 0px;
+    flex: 0 0 256px;
+}
+
+.text-column {
+    flex: 1;
+    padding: 0px 16px;
 }
 
 .image-box {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust 200px to the minimum column width you want */
-    gap: 16px; /* Add space between the images */
-    padding: 16px 192px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
 }
   
 .image-box img {
-    width: 100%;
-}
-  
-.image-container {
-    display: flex;
-    align-items: stretch; /* Ensures all images in a row have the same height */
-    width: calc(33.33% - 10px); /* Adjust for 3 columns, minus the gap */
-}
-  
-@media (max-width: 800px) {
-    .image-container {
-      width: calc(50% - 10px); /* Adjust to 2 columns for smaller screens */
-    }
-}
-  
-@media (max-width: 500px) {
-    .image-container {
-      width: 100%; /* Single column for very small screens */
-    }
+    width: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 .button-2 {
     display: inline-block;
     padding: 20px 32px;
-    background-color: black; /* Black background */
-    color: white; /* White text */
+    background-color: black;
+    color: white;
     text-align: center;
-    text-decoration: none; /* Remove underline */
-    border-radius: 40px; /* Rounded corners */
+    text-decoration: none;
+    border-radius: 40px;
     font-size: 40px;
     font-family: "halyard-display-variable", sans-serif;;
     border: none;
@@ -195,25 +224,136 @@ body {
 
 .footer-container {
     display: flex;
+    flex-direction: row;
     padding: 16px 192px;
-    justify-content: space-between; /* Space between columns */
-    align-items: center; /* Center items vertically */
+    justify-content: space-between;
+    align-items: center;
 }
 
 .footer-container .column {
-    flex: 0 1 auto; /* Allow columns to respect their own width */
+    flex: 0 1 auto;
 }
 
 .footer-container .left {
-    text-align: left; /* Align text to the left */
+    text-align: left;
     padding-right: 32px;
 }
 
 .footer-container .right {
-    text-align: right; /* Align text to the right */
+    text-align: right;
     padding-left: 32px;
 }
 
 .footer-container .spacer {
-    flex-grow: 1; /* This will take up all available space */
+    flex-grow: 1;
+}
+
+/* Responsive Settings */
+
+@media (max-width: 800px) {
+    .image-container {
+      width: calc(50% - 10px);
+    }
+}
+  
+@media (max-width: 500px) {
+    .image-container {
+      width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero img {
+        content: url('/assets/images/Mobile/PM_M_GIF_LandingPage.gif');
+    }
+
+    .h1 {
+        color: #000;
+        font-family: "halyard-display-variable", sans-serif;
+        font-size: 53.165px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 60px;
+        scroll-margin-top: 104px;
+    }
+
+    .p {
+        color: #000;
+        font-family: "halyard-display-variable", sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 35px;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 32px 32px;
+    }
+
+    .h-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 256px;
+        padding: 32px 32px;
+    }
+
+    .h-center img {
+        content: url('/assets/images/Mobile/Loghi/M_Loghi_Enti_tot.png');
+        max-height: 75%;
+    }
+
+    .image-column {
+        flex: 0 0 0px;
+        padding: 0px;
+        width: 100%;
+    }
+
+    .text-column {
+        flex: 1;
+        width: 100%;
+        padding: 16px 0px;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        padding: 16px 32px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .container-dark .image-column {
+        padding: 0px 0px;
+        flex: 0 0 0px;
+    }
+    
+    .container-dark .text-column {
+        padding: 0px 0px;
+        background-color: transparent;
+    }
+
+    .central-button {
+        position: static; /* Make it inline with the menu */
+        transform: none; /* Remove centering */
+        margin-right: auto; /* Align it to the left */
+    }
+
+    /* Move Contact into the menu */
+    .navbar .right {
+        display: none;
+    }
+
+    .navbar ul {
+        display: none;
+    }
+      
+    .hamburger {
+        display: block; /* Show hamburger icon on small screens */
+    }
+      
+    .fullscreen-menu.show {
+        display: flex; /* Show fullscreen vertical menu */
+    }
 }
